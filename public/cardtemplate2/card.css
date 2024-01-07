@@ -1,0 +1,40 @@
+#jumbotron {
+  background-image: url(./technology-background.jpeg);
+  background-size: cover;
+}
+
+#logo {
+  background-image: url(./partners_iOS.png);
+  background-size: cover;
+}
+
+#cardBodyZero {
+  display: block;
+}
+#cardBodyOne {
+  display: none;
+}
+#cardBodyTwo {
+  display: none;
+}
+#cardBodyThree {
+  display: none;
+}
+#cardBodyFour {
+  display: none;
+}
+#cardBodyFive {
+  display: none;
+}
+#cardBodySix {
+  display: none;
+}
+#cardBodySeven {
+  display: none;
+}
+#cardBodyEight {
+  display: none;
+}
+#cardBodyNine {
+  display: none;
+}

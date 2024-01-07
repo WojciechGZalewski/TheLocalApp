@@ -1,0 +1,65 @@
+/* Share list */
+.share_list {
+    position: fixed;
+    width: auto;
+    height: auto;
+    margin: auto;
+    bottom: 13vh;
+    left: 25px;
+    display: flex;
+    display: none;
+    align-self: center;
+    text-align: center;
+    /* border: thin solid black; */
+    z-index: 999;
+}
+
+.share_list--icon {
+    margin: 2px 1px;
+    width: 3.5rem !important;
+    height: 3.5rem !important;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 87, 51, 0.9);
+    cursor: pointer;
+    float: left;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+    -webkit-tap-highlight-color: transparent;
+    /* For iOS */
+    tap-highlight-color: transparent;
+    /* For other browsers */
+}
+
+#facebook {
+    background-image: url(/img/facebook.png);
+    background-size: cover;
+}
+
+#google {
+    background-image: url(/img/google.png);
+    background-size: cover;
+}
+
+#linkedin {
+    background-image: url(/img/linkedin.png);
+    background-size: cover;
+}
+
+#pintrest {
+    background-image: url(/img/pinterest.png);
+    background-size: cover;
+}
+
+#print {
+    background-image: url(/img/print.png);
+    background-size: cover;
+}
+
+#email {
+    background-image: url(/img/email.png);
+    background-size: cover;
+}
+
+#ex {
+    background-image: url(/img/ex.png);
+    background-size: cover;
+}

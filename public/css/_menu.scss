@@ -1,0 +1,278 @@
+@import 'fonts-colours';
+
+// Corner Icons
+.top_left,
+.top_left--close,
+.top_right,
+.top_right--close,
+.bottom_left,
+.bottom_left--close,
+.bottom_right,
+.bottom_right--close {
+    position: fixed;
+    width: 3.5rem;
+    height: 3.5rem;
+    color: $secondary-color;
+    font-size: 1.2rem;
+    cursor: pointer;
+    border: 2px solid $primary-border-color;
+    background-color: $primary-color;
+    border-radius: 50%;
+    text-align: center;
+    opacity: 0.8;
+    z-index: 999;
+    -webkit-tap-highlight-color: transparent;
+    tap-highlight-color: transparent;
+
+    :hover {
+        transform: scale(110%);
+        opacity: 1;
+    }
+}
+
+.top_left,
+.top_left--close,
+.top_right,
+.top_right--close {
+    top: 10px;
+}
+
+.bottom_left,
+.bottom_left--close,
+.bottom_right,
+.bottom_right--close {
+    bottom: 10px;
+}
+
+.top_left,
+.top_left--close,
+.bottom_left,
+.bottom_left--close {
+    left: 10px;
+}
+
+.top_right,
+.top_right--close,
+.bottom_right,
+.bottom_right--close {
+    right: 10px;
+}
+
+.top_left--close,
+.top_right--close,
+.bottom_left--close,
+.bottom_right--close {
+    display: none;
+}
+
+.fa-solid {
+    margin-top: 1.1rem;
+}
+
+.card-menu-background {
+    background-color: $primary-color;
+    color: rgba(95, 158, 160, 1);
+}
+
+// Menu Body - menus & card menus: location, main menu
+.menu-body {
+    position: fixed;
+    width: 240px;
+    top: calc(50% - 185px);
+    left: calc(50% - 120px);
+    padding: 0px;
+    margin: 0px;
+    border-radius: 20px;
+    display: none;
+    background-color: rgba(255, 255, 255, 0.5);
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+    z-index: 999;
+}
+
+
+.menu-body--fader {
+    position: fixed;
+    width: auto;
+    height: 300px;
+    top: calc(50% - 185px);
+    left: calc(50% - 120px);
+    padding: 0px;
+    margin: 0px;
+    // overflow: hidden;
+    display: none;
+    z-index: 999;
+}
+
+.menu-wrapper {
+    position: inherit;
+    display: flex;
+    align-items: center;
+    width: 240px;
+    height: 295px;
+    padding: 0px;
+    margin: 0px;
+    top: calc(50% - 185px);
+    border-radius: 20px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    display: none;
+    z-index: 999;
+
+    ::-webkit-scrollbar {
+        width: 1px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background-color: wheat;
+        border-radius: 1px;
+    }
+
+    ::-webkit-scrollbar-track {
+        background-color: transparent;
+    }
+}
+
+.menu-location {
+    height: 187px;
+}
+
+.menu-main {
+    height: 300px;
+}
+
+.menu-chevron--up,
+.menu-chevron--down {
+    position: fixed;
+    margin: 0px;
+    padding: 0px;
+    width: 240px;
+    height: 20px;
+    padding: 0px;
+    margin: 0px;
+    left: calc(50% - 120px);
+    font-size: 1rem;
+    text-align: center;
+    color: ghostwhite;
+    display: none;
+    z-index: 1000;
+}
+
+.menu-chevron--up {
+    top: 0px;
+    border-radius: 20px 20px 0px 0px;
+    top: calc(50% - 185px);
+    background: linear-gradient(180deg,
+            rgba(178, 190, 181, 1) 0%,
+            rgba(178, 190, 181, 0.7) 50%,
+            rgba(178, 190, 181, 0) 100%);
+}
+
+.menu-chevron--down {
+    bottom: 0px;
+    border-radius: 0px 0px 20px 20px;
+    top: calc(50% + 95px);
+    background: linear-gradient(0deg,
+            rgba(178, 190, 181, 1) 0%,
+            rgba(178, 190, 181, 0.7) 50%,
+            rgba(178, 190, 181, 0) 100%);
+}
+
+.fa-chevron-up,
+.fa-chevron-down {
+    margin: 0px;
+}
+
+.menu-option {
+    position: relative;
+    // display: flex;
+    flex-direction: column;
+    width: 250px;
+    height: auto;
+}
+
+.menu-option--caption {
+    display: block;
+    width: 165px;
+    height: 30px;
+    background-color: ghostwhite;
+    color: black;
+    border: 1px solid rgba(255, 87, 51, 0.9);
+    border-radius: 20px;
+    padding-top: 10px;
+    margin: 3px;
+    font-weight: 400;
+    font-size: 1rem;
+    cursor: pointer;
+    text-align: center;
+    -webkit-tap-highlight-color: transparent;
+    tap-highlight-color: transparent;
+    float: left;
+}
+
+.menu-option--icon {
+    display: inline-block;
+    margin: 2px 1px;
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 87, 51, 0.9);
+    background-color: ghostwhite;
+    font-size: 1.3rem;
+    text-align: center;
+    cursor: pointer;
+    float: left;
+    -webkit-tap-highlight-color: transparent;
+    tap-highlight-color: transparent;
+}
+
+/* Help Cards */
+.help_card--top_left,
+.help_card--top_right,
+.help_card--bottom_left,
+.help_card--bottom_right,
+.help_card--centre {
+    position: fixed;
+    width: 120px;
+    height: 60px;
+    border: 1px solid rgba(255, 87, 51, 0.9);
+    background-color: aliceblue;
+    display: none;
+    z-index: 999;
+}
+
+.help_card--top_left {
+    top: 90px;
+    left: 60px;
+    border-radius: 0px 10px 10px 10px;
+}
+
+.help_card--top_right {
+    top: 90px;
+    right: 60px;
+    border-radius: 10px 0px 10px 10px;
+}
+
+.help_card--bottom_left {
+    bottom: 90px;
+    left: 60px;
+    border-radius: 10px 10px 10px 0px;
+}
+
+.help_card--bottom_right {
+    bottom: 90px;
+    right: 60px;
+    border-radius: 10px 10px 0px 10px;
+}
+
+.help_card--centre {
+    width: 300px;
+    height: 200px;
+    top: calc(50vh - 100px);
+    left: calc(50vw - 150px);
+    border-radius: 10px;
+}
+
+.location-welcome--underlay {
+    position: fixed;
+    display: none;
+}

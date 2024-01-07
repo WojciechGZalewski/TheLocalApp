@@ -1,0 +1,99 @@
+@import 'fonts-colours';
+@import 'cookies-screen';
+@import 'splash-screen';
+@import 'qr-code';
+@import 'share';
+@import 'card';
+@import 'menu';
+
+body {
+    font-family: "Roboto", sans-serif;
+    display: flex;
+    background-color: black;
+    font-weight: 300;
+    font-size: 1rem;
+    padding: 0px;
+    margin: 0px;
+}
+
+#map {
+    height: calc(100% - 155px);
+    display: block;
+}
+
+.welcome-div {
+    position: relative;
+    width: 100%;
+    height: calc(100vh - 175px);
+    padding: 10px;
+    overflow: scroll;
+}
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    width: 100vw;
+    height: auto;
+    text-align: center;
+    padding: 0px;
+
+    p {
+        margin: 0px;
+        font-size: 0.7em;
+        color: whitesmoke;
+        font-weight: 500;
+    }
+}
+
+.body_overlay {
+    position: fixed;
+    background-color: rgba(255, 255, 255, 0.3);
+    width: 100vw;
+    height: 100vh;
+    display: none;
+    background-color: rgba(255, 255, 255, 0.5);
+    /* White with 50% opacity */
+    backdrop-filter: blur(0.5px);
+    /* Blur effect */
+    z-index: 999;
+}
+
+.logo {
+    position: fixed;
+    top: 5vh;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    /* For iOS */
+    tap-highlight-color: transparent;
+    z-index: 1999;
+
+    img {
+        width: 15rem;
+    }
+}
+
+.welcome-div {
+    background-color: white;
+    color: black;
+}
+
+button {
+    position: fixed;
+    bottom: 18px;
+    right: calc(50% - 6.5rem);
+    width: 13rem;
+    height: 3rem;
+    background-color: ghostwhite;
+    color: black;
+    border: 1px solid rgba(255, 87, 51, 0.9);
+    border-radius: 2rem;
+    padding-top: 3px;
+    margin: 0px;
+    font-weight: 400;
+    font-size: 1em;
+    text-align: center;
+    cursor: pointer;
+    z-index: 10;
+}

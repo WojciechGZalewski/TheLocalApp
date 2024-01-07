@@ -1,0 +1,16 @@
+//QR Code
+.qr--code {
+    position: fixed;
+    width: 140px;
+    height: 140px;
+    top: calc(50vh - 70px);
+    left: calc(50vw - 70px);
+    border-radius: 10px;
+    border: 1px solid black;
+    background-color: black;
+    background-image: url(../cardtemplate/QR-Code.png);
+    background-size: cover;
+    display: none;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+    z-index: 999;
+}

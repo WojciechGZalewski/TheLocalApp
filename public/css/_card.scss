@@ -1,0 +1,127 @@
+@import 'grid-layout';
+
+@mixin box-shadow-deep {
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+.card {
+    position: fixed;
+    display: flex;
+    top: 80px;
+    padding: 0px;
+    margin: 0px;
+    width: 100%;
+    height: calc(100vh - 155px);
+    border-radius: 15px;
+    background-color: $primary-color;
+    text-align: center;
+    align-content: center;
+    display: none;
+    z-index: 996;
+}
+
+.card-body {
+    position: fixed;
+    display: flex;
+    top: 80px;
+    left: 0px;
+    padding: 80px 15px 30px 15px;
+    width: calc(100% - 30px);
+    height: calc(100vh - 190px);
+    font-family: "Roboto", sans-serif;
+    line-height: 1.3rem;
+    font-weight: 200;
+    border-radius: 15px;
+    background-color: $secondary-color;
+    overflow-y: scroll;
+    z-index: 996;
+    text-align: center;
+    align-content: center;
+
+    header {
+        text-align: left;
+    }
+}
+
+
+
+.jumbotron {
+    position: fixed;
+    top: 0px;
+    width: 100vw;
+    height: 100px;
+    background-size: cover;
+    z-index: 995;
+}
+
+.card-logo {
+    position: fixed;
+    top: 20px;
+    width: 140px;
+    height: 90px;
+    margin-left: calc(50vw - 70px);
+    border-radius: 20px;
+    background-color: rgba(95, 158, 160, 1);
+    background-size: cover;
+    cursor: pointer;
+    z-index: 997;
+    @include box-shadow-deep();
+}
+
+.card-logo-caption {
+    position: absolute;
+    top: 120px;
+    width: 220px;
+    height: auto;
+    padding: 0px;
+    margin-left: calc(50vw - 110px);
+    font-style: italic;
+    color: green;
+    border-radius: 10px;
+    background-color: rgba(178, 190, 181, 0.1);
+    text-align: center;
+    z-index: 997;
+    @include box-shadow-deep();
+}
+
+/* Images */
+.image_left {
+    float: left;
+    margin: 0 20px 20px 0;
+    display: none;
+}
+
+.image_right {
+    float: right;
+    margin: 0 20px 20px 0;
+    display: none;
+}
+
+/* Page Layout */
+.head {
+    position: fixed;
+    top: 80px;
+    background-color: $background-color;
+    border-radius: 15px 15px 0px 0px;
+    width: 100vw;
+    height: 20px;
+    background: linear-gradient(180deg,
+            rgba(178, 190, 181, 1) 0%,
+            rgba(178, 190, 181, 0.5) 50%,
+            rgba(178, 190, 181, 0) 100%);
+    z-index: 997;
+}
+
+.tail {
+    position: fixed;
+    bottom: 0px;
+    background-color: $background-color;
+    border-radius: 0px 0px 15px 15px;
+    width: 100vw;
+    height: 20px;
+    background: linear-gradient(0deg,
+            rgba(178, 190, 181, 1) 0%,
+            rgba(178, 190, 181, 0.5) 50%,
+            rgba(178, 190, 181, 0) 100%);
+    z-index: 997;
+}

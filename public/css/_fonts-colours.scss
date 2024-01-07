@@ -1,0 +1,19 @@
+// _fonts.scss
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@200;300;400;600&display=swap');
+
+$font-family: 'Roboto', sans-serif;
+
+// Define variables for each weight
+$font-weight-light: 200;
+$font-weight-normal: 300;
+$font-weight-regular: 400;
+$font-weight-semibold: 600;
+
+@import "~@fortawesome/fontawesome-free/css/all.css";
+
+
+$secondary-border-color: rgba(244, 0, 6, 1); //Red
+$primary-border-color: rgba(193, 0, 5, 1); //Cherry red
+$primary-color: rgba(0, 0, 0, 1); //Black
+$background-color: rgba(112, 112, 112, 1); //Gray44
+$secondary-color: rgba(255, 255, 255, 1); //White

@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="manifest" href="/fullscrin.json">
+    <!-- <link rel="stylesheet" href="/index.css"> -->
+    <link rel="stylesheet" href="/css/main.css">
+    <!-- our project just needs Font Awesome Solid + Brands -->
+    <!-- <link href="/fontawesome/css/fontawesome.css" rel="stylesheet"> -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/fontawesome.min.css" rel="stylesheet">
+
+    <!-- <link href="/fontawesome/css/brands.css" rel="stylesheet"> -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/brands.min.css" rel="stylesheet">
+
+    <!-- <link href="/fontawesome/css/solid.css" rel="stylesheet"> -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/solid.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <!-- <script type="text/javascript" src="./js/index.js" defer></script> -->
+    <script type="text/javascript" src="./js/menu-main.js" defer></script>
+    <!-- <script type="text/javascript" src="./js/menu-main.js" defer></script> -->
+    <title>TheLocalApp</title>
+    <!-- <script>
+        // Function to check if the device is a mobile device
+        function isMobileDevice() {
+            return (typeof window.orientation !== 'undefined') || (navigator.userAgent.indexOf('IEMobile') !== -1);
+        }
+
+        // Function to redirect based on the device type
+        function redirectToCorrectPage() {
+            if (isMobileDevice()) {
+                window.location.href = 'index_m.html'; // Redirect to mobile version
+            } else {
+                window.location.href = 'index.html'; // Redirect to desktop version
+            }
+        }
+
+        // Call the redirection function when the page loads
+        window.onload = redirectToCorrectPage;
+    </script> -->
+</head>
+
+<body>
+    <!-- Splash Screen -->
+    <div id="splash-screen">
+        <div id="splash-content">
+            <h2>Welcome to Harpenden!</h2>
+            <img src="logo.svg">
+            <p> There is a mobile app for almost anything: for running, for walking, for road rescue, for dating, for
+                mapping the earth and the sky, and now there is TheLocalApp, for your Local Community…
+            </p>
+            <!-- <p>This is your splash screen content.</p> -->
+        </div>
+    </div>
+
+    <!-- Cookie Policies -->
+    <div id="cookieDiv">
+        <p>This website uses cookies to ensure you get the best experience. <a href="#"
+                onclick="showCookiePolicies()">Cookie Policies</a></p>
+        <button id="dismiss-button" onclick="dismissCookieDiv()">Dismiss</button>
+    </div>
+    <div id="cookiePolicies">
+        <h1>Cookie Policies</h1>
+        <p>Here are the details of our cookie policies.</p>
+        <button id="dismiss-button" onclick="dismissCookiePolicies()">Dismiss</button>
+    </div>
+
+    <!-- Custom Add to Home Screen Prompt -->
+    <div id="addToHomeScreenPrompt" style="display: none; z-index: 1000;">
+        <p>Add to your Home Screen now!</p>
+        <button id="addToHomeScreenButton">Add Now</button>
+        <button id="dismissButton">Dismiss</button>
+    </div>
+
+    <!-- Page Misc -->
+    <div class="body_overlay" id="bodyOverlay"></div>
+
+    <div class="logo" id="logoHome"><img src="/logo.svg"></div>
+
+    <!-- Corner Buttons -->
+    <div class="top_left" id="locationOptions"><i class="fa-solid fa-location-dot"></i></div>
+    <div class="top_left--close" id="locationOptionsClose"><i class="fa-solid fa-x"></i></div>
+
+    <div class="top_right" id="menuSelection"><i class="fa-solid fa-bars"></i></div>
+    <div class="top_right--close" id="menuSelectionClose"><i class="fa-solid fa-x"></i></div>
+
+    <!-- <div class="bottom_left" id="shareButton"><i class="fa-solid fa-share"></i></div> -->
+    <!-- <div class="bottom_left--close" id="shareButtonCompClose"><i class="fa-solid fa-x"></i></div> -->
+
+    <!-- <div class="bottom_left" id="shareButtonComp"><i class="fa-solid fa-share"></i></div> -->
+
+    <div class="bottom_left" id="shareButtonComp"><i class="fa-solid fa-share"></i></div>
+    <div class="bottom_left--close" id="shareButtonCompClose"><i class="fa-solid fa-x"></i></div>
+
+    <div class="bottom_right" id="helpButton"><i class="fa-solid fa-circle-info"></i></div>
+    <div class="bottom_right--close" id="helpButtonClose"><i class="fa-solid fa-x"></i></div>
+
+    <!-- Location set of options -->
+    <div class="menu-body menu-location" id="locationMenuBody">
+        <div class="menu-option" id="menuOptionResident">
+            <div class="menu-option--caption">Resident</div>
+            <div class="menu-option--icon"><i class="fa-solid fa-circle-question"></i>
+            </div>
+        </div>
+        <div class="menu-option" id="menuOptionVisitor">
+            <div class="menu-option--caption">Visitor</div>
+            <div class="menu-option--icon"><i class="fa-solid fa-circle-question"></i>
+            </div>
+        </div>
+        <div class="menu-option" id="menuOptionOutsider">
+            <div class="menu-option--caption">Outsider</div>
+            <div class="menu-option--icon"><i class="fa-solid fa-circle-question"></i>
+            </div>
+        </div>
+    </div>
+
+    <div class="menu-body menu-main" id="mainMenuBody">
+        <div class="menu-chevron--up" id="mainMenuArrowTop"><i class="fa-solid fa-chevron-up"></i></div>
+        <div class="memu-body--fader">
+            <!-- First set of 10 options -->
+            <div id="set0" class="menu-wrapper option-set">
+                <div class="menu-option" id="mainMenuItem0">
+                    <div class="menu-option--caption">Set 0 Option 0</div>
+                    <div class="menu-option--icon"><i class="fa-solid fa-house"></i>
+                    </div>
+                </div>
+                <div class="menu-option" id="mainMenuItem1">
+                    <div class="menu-option--caption">Set 0 Option 1</div>
+                    <div class="menu-option--icon"><i class="fa-solid fa-house"></i>
+                    </div>
+                </div>
+                <div class="menu-option" id="mainMenuItem2">
+                    <div class="menu-option--caption">Set 0 Option 2</div>
+                    <div class="menu-option--icon"><i class="fa-solid fa-house"></i>
+                    </div>
+                </div>
+                <div class="menu-option" id="mainMenuItem3">
+                    <div class="menu-option--caption">Set 0 Option 3</div>
+                    <div class="menu-option--icon"><i class="fa-solid fa-house"></i>
+                    </div>
+                </div>
+                <div class="menu-option" id="mainMenuItem4">
+                    <div class="menu-option--caption">Set 0 Option 4</div>
+                    <div class="menu-option--icon"><i class="fa-solid fa-house"></i>
+                    </div>
+                </div>
+                <div class="menu-option" id="mainMenuItem5">
+                    <div class="menu-option--caption">Set 0 Option 5</div>
+                    <div class="menu-option--icon"><i class="fa-solid fa-house"></i>
+                    </div>
+                </div>
+                <div class="menu-option" id="mainMenuItem6">
+                    <div class="menu-option--caption">Set 0 Option 6</div>
+                    <div class="menu-option--icon"><i class="fa-solid fa-house"></i>
+                    </div>
+                </div>
+                <div class="menu-option" id="mainMenuItem7">
+                    <div class="menu-option--caption">Set 0 Option 7</div>
+                    <div class="menu-option--icon"><i class="fa-solid fa-house"></i>
+                    </div>
+                </div>
+                <div class="menu-option" id="mainMenuItem8">
+                    <div class="menu-option--caption">Set 0 Option 8</div>
+                    <div class="menu-option--icon"><i class="fa-solid fa-house"></i>
+                    </div>
+                </div>
+                <div class="menu-option" id="mainMenuItem9">
+                    <div class="menu-option--caption">Set 0 Option 9</div>
+                    <div class="menu-option--icon"><i class="fa-solid fa-house"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="menu-chevron--down" id="mainMenuArrowBottom"><i class="fa-solid fa-chevron-down"></i></div>
+        </div>
+
+        <!-- Second set of 10 options -->
+        <div class="memu-body--fader">
+            <div id="set1" class="menu-wrapper option-set">
+                <div class="menu-option" id="mainMenuItem10">
+                    <div class="menu-option--caption">Set 1 Option 0</div>
+                    <div class="menu-option--icon"><i class="fa-solid fa-house"></i>
+                    </div>
+                </div>
+                <div class="menu-option" id="mainMenuItem11">
+                    <div class="menu-option--caption">Set 1 Option 1</div>
+                    <div class="menu-option--icon"><i class="fa-solid fa-house"></i>
+                    </div>
+                </div>
+                <div class="menu-option" id="mainMenuItem12">
+                    <div class="menu-option--caption">Set 1 Option 2</div>
+                    <div class="menu-option--icon"><i class="fa-solid fa-house"></i>
+                    </div>
+                </div>
+                <div class="menu-option" id="mainMenuItem13">
+                    <div class="menu-option--caption">Set 1 Option 3</div>
+                    <div class="menu-option--icon"><i class="fa-solid fa-house"></i>
+                    </div>
+                </div>
+                <div class="menu-option" id="mainMenuItem14">
+                    <div class="menu-option--caption">Set 1 Option 4</div>
+                    <div class="menu-option--icon"><i class="fa-solid fa-house"></i>
+                    </div>
+                </div>
+                <div class="menu-option" id="mainMenuItem15">
+                    <div class="menu-option--caption">Set 1 Option 5</div>
+                    <div class="menu-option--icon"><i class="fa-solid fa-house"></i>
+                    </div>
+                </div>
+                <div class="menu-option" id="mainMenuItem16">
+                    <div class="menu-option--caption">Set 1 Option 6</div>
+                    <div class="menu-option--icon"><i class="fa-solid fa-house"></i>
+                    </div>
+                </div>
+                <div class="menu-option" id="mainMenuItem17">
+                    <div class="menu-option--caption">Set 1 Option 7</div>
+                    <div class="menu-option--icon"><i class="fa-solid fa-house"></i>
+                    </div>
+                </div>
+                <div class="menu-option" id="mainMenuItem18">
+                    <div class="menu-option--caption">Set 1 Option 8</div>
+                    <div class="menu-option--icon"><i class="fa-solid fa-house"></i>
+                    </div>
+                </div>
+                <div class="menu-option" id="mainMenuItem19">
+                    <div class="menu-option--caption">Set 1 Option 9</div>
+                    <div class="menu-option--icon"><i class="fa-solid fa-house"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="menu-chevron--down" id="mainMenuArrowBottom"><i class="fa-solid fa-chevron-down"></i></div>
+        </div>
+        <!-- Third set of 10 options -->
+        <div class="memu-body--fader">
+            <div id="set2" class="menu-wrapper option-set">
+                <div class="menu-option" id="mainMenuItem20">
+                    <div class="menu-option--caption">Set 2 Option 0</div>
+                    <div class="menu-option--icon"><i class="fa-solid fa-house"></i>
+                    </div>
+                </div>
+                <div class="menu-option" id="mainMenuItem21">
+                    <div class="menu-option--caption">Set 2 Option 1</div>
+                    <div class="menu-option--icon"><i class="fa-solid fa-house"></i>
+                    </div>
+                </div>
+                <div class="menu-option" id="mainMenuItem22">
+                    <div class="menu-option--caption">Set 2 Option 2</div>
+                    <div class="menu-option--icon"><i class="fa-solid fa-house"></i>
+                    </div>
+                </div>
+                <div class="menu-option" id="mainMenuItem23">
+                    <div class="menu-option--caption">Set 2 Option 3</div>
+                    <div class="menu-option--icon"><i class="fa-solid fa-house"></i>
+                    </div>
+                </div>
+                <div class="menu-option" id="mainMenuItem24">
+                    <div class="menu-option--caption">Set 2 Option 4</div>
+                    <div class="menu-option--icon"><i class="fa-solid fa-house"></i>
+                    </div>
+                </div>
+                <div class="menu-option" id="mainMenuItem25">
+                    <div class="menu-option--caption">Set 2 Option 5</div>
+                    <div class="menu-option--icon"><i class="fa-solid fa-house"></i>
+                    </div>
+                </div>
+                <div class="menu-option" id="mainMenuItem26">
+                    <div class="menu-option--caption">Set 2 Option 6</div>
+                    <div class="menu-option--icon"><i class="fa-solid fa-house"></i>
+                    </div>
+                </div>
+                <div class="menu-option" id="mainMenuItem27">
+                    <div class="menu-option--caption">Set 2 Option 7</div>
+                    <div class="menu-option--icon"><i class="fa-solid fa-house"></i>
+                    </div>
+                </div>
+                <div class="menu-option" id="mainMenuItem28">
+                    <div class="menu-option--caption">Set 2 Option 8</div>
+                    <div class="menu-option--icon"><i class="fa-solid fa-house"></i>
+                    </div>
+                </div>
+                <div class="menu-option" id="mainMenuItem29">
+                    <div class="menu-option--caption">Set 2 Option 9</div>
+                    <div class="menu-option--icon"><i class="fa-solid fa-house"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="menu-chevron--down" id="mainMenuArrowBottom"><i class="fa-solid fa-chevron-down"></i></div>
+        </div>
+        <!-- Location Not Selected -->
+        <div class="memu-body--fader">
+            <div id="set3" class="menu-wrapper option-set">
+                <p style="color: black;">Plese select your relationship to Harpenden!</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Share List -->
+    <div class="share_list" id="shareOptions">
+        <div class="share_list--icon" id="facebook"></div>
+        <div class="share_list--icon" id="ex"></div>
+        <div class="share_list--icon" id="google"></div>
+        <div class="share_list--icon" id="linkedin"></div>
+        <div class="share_list--icon" id="pintrest"></div>
+        <div class="share_list--icon" id="print"></div>
+        <div class="share_list--icon" id="email"></div>
+    </div>
+
+    <!-- Page Elements -->
+    <!-- <div class="header" id="header"></div> -->
+    <!-- <div class="card_overlay" id="card"></div> -->
+    <div class="footer" id="footer">
+        <p>&copy; 2023 TheLocalApp Co. LTD. All rights reserved.</p>
+    </div>
+
+    <!-- Help -->
+    <div class="help_card--top_left" id="helpCardTopLeft"></div>
+    <div class="help_card--top_right" id="helpCardTopRight"></div>
+    <div class="help_card--bottom_left" id="helpCardBottomLeft"></div>
+    <div class="help_card--bottom_right" id="helpCardBottomRight"></div>
+    <div class="help_card--centre" id="locationWelcomeUnderlay"></div>
+
+    </div>
+    <div class="card" id="cardTemplate0">
+        <iframe title="Card Template" src="cardtemplate1/card.html" width="100%" height="100%"
+            style="border-radius: 15px; border: 0px;" loadin="lazy"></iframe>
+    </div>
+    <div class="card" id="cardTemplate1">
+        <iframe title="Card Template" src="cardtemplate2/card.html" width="100%" height="100%"
+            style="border-radius: 15px; border: 0px;" loadin="lazy"></iframe>
+    </div>
+    <div class="card" id="cardTemplate2">
+        <iframe title="Card Template" src="cardtemplate/card.html" width="100%" height="100%"
+            style="border-radius: 15px; border: 0px;" loadin="lazy"></iframe>
+    </div>
+    <div class="card" id="cardTemplate3">
+        <iframe title="Card Template" src="cardtemplate/card.html" width="100%" height="100%"
+            style="border-radius: 15px; border: 0px;" loadin="lazy"></iframe>
+    </div>
+    <div class="card" id="cardTemplate4">
+        <iframe title="Card Template" src="cardtemplate/card.html" width="100%" height="100%"
+            style="border-radius: 15px; border: 0px;" loadin="lazy"></iframe>
+    </div>
+    <div class="card" id="cardTemplate5">
+        <iframe title="Card Template" src="cardtemplate/card.html" width="100%" height="100%"
+            style="border-radius: 15px; border: 0px;" loadin="lazy"></iframe>
+    </div>
+    <div class="card" id="cardTemplate6">
+        <iframe title="Card Template" src="cardtemplate/card.html" width="100%" height="100%"
+            style="border-radius: 15px; border: 0px;" loadin="lazy"></iframe>
+    </div>
+    <div class="card" id="cardTemplate7">
+        <iframe title="Card Template" src="cardtemplate/card.html" width="100%" height="100%"
+            style="border-radius: 15px; border: 0px;" loadin="lazy"></iframe>
+    </div>
+    <div class="card" id="cardTemplate8">
+        <iframe title="Card Template" src="cardtemplate/card.html" width="100%" height="100%"
+            style="border-radius: 15px; border: 0px;" loadin="lazy"></iframe>
+    </div>
+    <div class="card" id="cardTemplate9">
+        <iframe title="Card Template" src="cardtemplate/card.html" width="100%" height="100%"
+            style="border-radius: 15px; border: 0px;" loadin="lazy"></iframe>
+    </div>
+    <div class="card" id="cardTemplate10">
+        <iframe title="Card Template" src="cardtemplate/card.html" width="100%" height="100%"
+            style="border-radius: 15px; border: 0px;" loadin="lazy"></iframe>
+    </div>
+    <div class="card" id="cardTemplate11">
+        <iframe title="Card Template" src="cardtemplate/card.html" width="100%" height="100%"
+            style="border-radius: 15px; border: 0px;" loadin="lazy"></iframe>
+    </div>
+    <div class="card" id="cardTemplate12">
+        <iframe title="Card Template" src="cardtemplate/card.html" width="100%" height="100%"
+            style="border-radius: 15px; border: 0px;" loadin="lazy"></iframe>
+    </div>
+    <div class="card" id="cardTemplate13">
+        <iframe title="Card Template" src="cardtemplate/card.html" width="100%" height="100%"
+            style="border-radius: 15px; border: 0px;" loadin="lazy"></iframe>
+    </div>
+    <div class="card" id="cardTemplate14">
+        <iframe title="Card Template" src="cardtemplate/card.html" width="100%" height="100%"
+            style="border-radius: 15px; border: 0px;" loadin="lazy"></iframe>
+    </div>
+    <div class="card" id="cardTemplate15">
+        <iframe title="Card Template" src="cardtemplate/card.html" width="100%" height="100%"
+            style="border-radius: 15px; border: 0px;" loadin="lazy"></iframe>
+    </div>
+    <div class="card" id="cardTemplate16">
+        <iframe title="Card Template" src="cardtemplate/card.html" width="100%" height="100%"
+            style="border-radius: 15px; border: 0px;" loadin="lazy"></iframe>
+    </div>
+    <div class="card" id="cardTemplate17">
+        <iframe title="Card Template" src="cardtemplate/card.html" width="100%" height="100%"
+            style="border-radius: 15px; border: 0px;" loadin="lazy"></iframe>
+    </div>
+    <div class="card" id="cardTemplate18">
+        <iframe title="Card Template" src="cardtemplate/card.html" width="100%" height="100%"
+            style="border-radius: 15px; border: 0px;" loadin="lazy"></iframe>
+    </div>
+    <div class="card" id="cardTemplate19">
+        <iframe title="Card Template" src="cardtemplate/card.html" width="100%" height="100%"
+            style="border-radius: 15px; border: 0px;" loadin="lazy"></iframe>
+    </div>
+    <div class="card" id="cardTemplate20">
+        <iframe title="Card Template" src="cardtemplate/card.html" width="100%" height="100%"
+            style="border-radius: 15px; border: 0px;" loadin="lazy"></iframe>
+    </div>
+    <div class="card" id="cardTemplate21">
+        <iframe title="Card Template" src="cardtemplate/card.html" width="100%" height="100%"
+            style="border-radius: 15px; border: 0px;" loadin="lazy"></iframe>
+    </div>
+    <div class="card" id="cardTemplate22">
+        <iframe title="Card Template" src="cardtemplate/card.html" width="100%" height="100%"
+            style="border-radius: 15px; border: 0px;" loadin="lazy"></iframe>
+    </div>
+    <div class="card" id="cardTemplate23">
+        <iframe title="Card Template" src="cardtemplate/card.html" width="100%" height="100%"
+            style="border-radius: 15px; border: 0px;" loadin="lazy"></iframe>
+    </div>
+    <div class="card" id="cardTemplate24">
+        <iframe title="Card Template" src="cardtemplate/card.html" width="100%" height="100%"
+            style="border-radius: 15px; border: 0px;" loadin="lazy"></iframe>
+    </div>
+    <div class="card" id="cardTemplate25">
+        <iframe title="Card Template" src="cardtemplate/card.html" width="100%" height="100%"
+            style="border-radius: 15px; border: 0px;" loadin="lazy"></iframe>
+    </div>
+    <div class="card" id="cardTemplate26">
+        <iframe title="Card Template" src="cardtemplate/card.html" width="100%" height="100%"
+            style="border-radius: 15px; border: 0px;" loadin="lazy"></iframe>
+    </div>
+    <div class="card" id="cardTemplate27">
+        <iframe title="Card Template" src="cardtemplate/card.html" width="100%" height="100%"
+            style="border-radius: 15px; border: 0px;" loadin="lazy"></iframe>
+    </div>
+    <div class="card" id="cardTemplate28">
+        <iframe title="Card Template" src="cardtemplate/card.html" width="100%" height="100%"
+            style="border-radius: 15px; border: 0px;" loadin="lazy"></iframe>
+    </div>
+    <div class="card" id="cardTemplate29">
+        <iframe title="Card Template" src="cardtemplate/card.html" width="100%" height="100%"
+            style="border-radius: 15px; border: 0px;" loadin="lazy"></iframe>
+    </div>
+
+    <div class="card" id="map">
+        <iframe title="Google Map"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d78932.20447453257!2d-0.4445366098994775!3d51.81289560774986!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4876380b9f7e3c13%3A0x4eeb400a0ce7b472!2sHarpenden!5e0!3m2!1sen!2suk!4v1692783451602!5m2!1sen!2suk"
+            width="100%" height="100%" style="border-radius: 15px; border: 0px;" allowFullScreen="true" loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+    <div id="welcomeResident" class="card welcome-div" style="display: none;">
+        <p>Welcome Resident! This is the welcome content for residents.</p>
+        <div class="grid-container">
+            <div class="grid-item">
+                <div>1</div>
+            </div>
+            <div class="grid-item">
+                <div>2</div>
+            </div>
+            <div class="grid-item">
+                <div>3</div>
+            </div>
+            <div class="grid-item">
+                <div>4</div>
+            </div>
+            <div class="grid-item">
+                <div>5</div>
+            </div>
+            <div class="grid-item">
+                <div>6</div>
+            </div>
+            <div class="grid-item">
+                <div>7</div>
+            </div>
+            <div class="grid-item">
+                <div>8</div>
+            </div>
+        </div>
+    </div>
+
+    <div id="welcomeVisitor" class="card welcome-div" style="display: none;">
+        <p>Welcome Visitor! This is the welcome content for visitors.</p>
+        <div class="grid-container">
+            <div class="grid-item">
+                <div>1</div>
+            </div>
+            <div class="grid-item">
+                <div>2</div>
+            </div>
+            <div class="grid-item">
+                <div>3</div>
+            </div>
+            <div class="grid-item">
+                <div>4</div>
+            </div>
+            <div class="grid-item">
+                <div>5</div>
+            </div>
+            <div class="grid-item">
+                <div>6</div>
+            </div>
+            <div class="grid-item">
+                <div>7</div>
+            </div>
+            <div class="grid-item">
+                <div>8</div>
+            </div>
+        </div>
+    </div>
+
+    <div id="welcomeOutsider" class="card welcome-div" style="display: none;">
+        <p>Welcome Outsider! This is the welcome content for outsiders.</p>
+        <div class="grid-container">
+            <div class="grid-item">
+                <div>1</div>
+            </div>
+            <div class="grid-item">
+                <div>2</div>
+            </div>
+            <div class="grid-item">
+                <div>3</div>
+            </div>
+            <div class="grid-item">
+                <div>4</div>
+            </div>
+            <div class="grid-item">
+                <div>5</div>
+            </div>
+            <div class="grid-item">
+                <div>6</div>
+            </div>
+            <div class="grid-item">
+                <div>7</div>
+            </div>
+            <div class="grid-item">
+                <div>8</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Full Screen Button -->
+    <button id="fullscreenButton" onclick="toggleFullScreen()">
+        Enter Full Screen Mode
+    </button>
+
+</body>
+
+</html>

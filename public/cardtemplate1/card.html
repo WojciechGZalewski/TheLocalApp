@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="card.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/fontawesome.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/brands.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/solid.min.css" rel="stylesheet">
+    <script type="text/javascript" src="../js/menu-card.js" defer></script>
+    <title>Card</title>
+</head>
+
+<body>
+    <div class="body_overlay" id="bodyOverlay"></div>
+
+    <!-- Corner Buttons -->
+    <div class="top_left card-menu-background" id="menuSelection"><i class="fa-solid fa-bars"></i></div>
+    <div class="top_left--close card-menu-background" id="menuSelectionClose"><i class="fa-solid fa-x"></i></div>
+
+    <div class="top_right card-menu-background" id="qrIcon"><i class="fa-solid fa-qrcode"></i></div>
+    <div class="top_right--close card-menu-background" id="qrIconClose"><i class="fa-solid fa-x"></i></div>
+
+    <div class="menu-chevron--up" id="mainMenuArrowTop"><i class="fa-solid fa-chevron-up"></i></div>
+    <div class="menu-chevron--down" id="mainMenuArrowBottom"><i class="fa-solid fa-chevron-down"></i></div>
+
+    <div class="menu-body menu-main" id="mainMenuBody">
+        <div class="memu-body--fader">
+            <div id="wrapperSet" class="menu-wrapper">
+                <div class="menu-option" id="mainMenuItem0">
+                    <div class="menu-option--caption">Page 0</div>
+                    <div class="menu-option--icon"><i class="fa-solid fa-house"></i>
+                    </div>
+                </div>
+                <div class="menu-option" id="mainMenuItem1">
+                    <div class="menu-option--caption">Page 1</div>
+                    <div class="menu-option--icon"><i class="fa-solid fa-house"></i>
+                    </div>
+                </div>
+                <div class="menu-option" id="mainMenuItem2">
+                    <div class="menu-option--caption">Page 2</div>
+                    <div class="menu-option--icon"><i class="fa-solid fa-house"></i>
+                    </div>
+                </div>
+                <div class="menu-option" id="mainMenuItem3">
+                    <div class="menu-option--caption">Page 3</div>
+                    <div class="menu-option--icon"><i class="fa-solid fa-house"></i>
+                    </div>
+                </div>
+                <div class="menu-option" id="mainMenuItem4">
+                    <div class="menu-option--caption">Page 4</div>
+                    <div class="menu-option--icon"><i class="fa-solid fa-house"></i>
+                    </div>
+                </div>
+                <div class="menu-option" id="mainMenuItem5">
+                    <div class="menu-option--caption">Page 5</div>
+                    <div class="menu-option--icon"><i class="fa-solid fa-house"></i>
+                    </div>
+                </div>
+                <div class="menu-option" id="mainMenuItem6">
+                    <div class="menu-option--caption">Page 6</div>
+                    <div class="menu-option--icon"><i class="fa-solid fa-house"></i>
+                    </div>
+                </div>
+                <div class="menu-option" id="mainMenuItem7">
+                    <div class="menu-option--caption">Page 7</div>
+                    <div class="menu-option--icon"><i class="fa-solid fa-house"></i>
+                    </div>
+                </div>
+                <div class="menu-option" id="mainMenuItem8">
+                    <div class="menu-option--caption">Page 8</div>
+                    <div class="menu-option--icon"><i class="fa-solid fa-house"></i>
+                    </div>
+                </div>
+                <div class="menu-option" id="mainMenuItem9">
+                    <div class="menu-option--caption">Page 9</div>
+                    <div class="menu-option--icon"><i class="fa-solid fa-house"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="qr--code" id="qrCode"></div>
+
+    <div class="head" id="head"></div>
+    <div class="tail" id="tail"></div>
+    <div class="jumbotron" id="jumbotron"></div>
+    <div class="card-logo" id="logo"></div>
+    <div class="card-logo-caption" id="logo-caption">VoytekComputerService</div>
+    <div class="card-body" id="cardBodyZero">
+        <header>
+            <h3>Welcome to Page 0 - template 1</h3>
+        </header>
+        <div class="grid-container">
+            <div class="grid-item">
+                <div>1</div>
+            </div>
+            <div class="grid-item">
+                <div>2</div>
+            </div>
+            <div class="grid-item">
+                <div>3</div>
+            </div>
+            <div class="grid-item">
+                <div>4</div>
+            </div>
+            <div class="grid-item">
+                <div>5</div>
+            </div>
+            <div class="grid-item">
+                <div>6</div>
+            </div>
+            <div class="grid-item">
+                <div>7</div>
+            </div>
+            <div class="grid-item">
+                <div>8</div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div class="card-body" id="cardBodyOne">
+        <header>
+            <h3>Welcome to Page 1</h3>
+        </header>
+        <div class="grid-container">
+            <div class="grid-item">
+                <div>1</div>
+            </div>
+            <div class="grid-item">
+                <div>2</div>
+            </div>
+            <div class="grid-item">
+                <div>3</div>
+            </div>
+            <div class="grid-item">
+                <div>4</div>
+            </div>
+            <div class="grid-item">
+                <div>5</div>
+            </div>
+            <div class="grid-item">
+                <div>6</div>
+            </div>
+            <div class="grid-item">
+                <div>7</div>
+            </div>
+            <div class="grid-item">
+                <div>8</div>
+            </div>
+        </div>
+    </div>
+    <div class="card-body" id="cardBodyTwo">
+        <header>
+            <h3>Welcome to Page 2</h3>
+        </header>
+        <div class="grid-container">
+            <div class="grid-item">
+                <div>1</div>
+            </div>
+            <div class="grid-item">
+                <div>2</div>
+            </div>
+            <div class="grid-item">
+                <div>3</div>
+            </div>
+            <div class="grid-item">
+                <div>4</div>
+            </div>
+            <div class="grid-item">
+                <div>5</div>
+            </div>
+            <div class="grid-item">
+                <div>6</div>
+            </div>
+            <div class="grid-item">
+                <div>7</div>
+            </div>
+            <div class="grid-item">
+                <div>8</div>
+            </div>
+        </div>
+    </div>
+    <div class="card-body" id="cardBodyThree">
+        <header>
+            <h3>Welcome to Page 3</h3>
+        </header>
+        <div class="grid-container">
+            <div class="grid-item">
+                <div>1</div>
+            </div>
+            <div class="grid-item">
+                <div>2</div>
+            </div>
+            <div class="grid-item">
+                <div>3</div>
+            </div>
+            <div class="grid-item">
+                <div>4</div>
+            </div>
+            <div class="grid-item">
+                <div>5</div>
+            </div>
+            <div class="grid-item">
+                <div>6</div>
+            </div>
+            <div class="grid-item">
+                <div>7</div>
+            </div>
+            <div class="grid-item">
+                <div>8</div>
+            </div>
+        </div>
+    </div>
+    <div class="card-body" id="cardBodyFour">
+        <header>
+            <h3>Welcome to Page 4</h3>
+        </header>
+        <div class="grid-container">
+            <div class="grid-item">
+                <div>1</div>
+            </div>
+            <div class="grid-item">
+                <div>2</div>
+            </div>
+            <div class="grid-item">
+                <div>3</div>
+            </div>
+            <div class="grid-item">
+                <div>4</div>
+            </div>
+            <div class="grid-item">
+                <div>5</div>
+            </div>
+            <div class="grid-item">
+                <div>6</div>
+            </div>
+            <div class="grid-item">
+                <div>7</div>
+            </div>
+            <div class="grid-item">
+                <div>8</div>
+            </div>
+        </div>
+    </div>
+    <div class="card-body" id="cardBodyFive">
+        <header>
+            <h3>Welcome to Page 5</h3>
+        </header>
+        <div class="grid-container">
+            <div class="grid-item">
+                <div>1</div>
+            </div>
+            <div class="grid-item">
+                <div>2</div>
+            </div>
+            <div class="grid-item">
+                <div>3</div>
+            </div>
+            <div class="grid-item">
+                <div>4</div>
+            </div>
+            <div class="grid-item">
+                <div>5</div>
+            </div>
+            <div class="grid-item">
+                <div>6</div>
+            </div>
+            <div class="grid-item">
+                <div>7</div>
+            </div>
+            <div class="grid-item">
+                <div>8</div>
+            </div>
+        </div>
+    </div>
+    <div class="card-body" id="cardBodySix">
+        <header>
+            <h3>Welcome to Page 6</h3>
+        </header>
+        <div class="grid-container">
+            <div class="grid-item">
+                <div>1</div>
+            </div>
+            <div class="grid-item">
+                <div>2</div>
+            </div>
+            <div class="grid-item">
+                <div>3</div>
+            </div>
+            <div class="grid-item">
+                <div>4</div>
+            </div>
+            <div class="grid-item">
+                <div>5</div>
+            </div>
+            <div class="grid-item">
+                <div>6</div>
+            </div>
+            <div class="grid-item">
+                <div>7</div>
+            </div>
+            <div class="grid-item">
+                <div>8</div>
+            </div>
+        </div>
+    </div>
+    <div class="card-body" id="cardBodySeven">
+        <header>
+            <h3>Welcome to Page 7</h3>
+        </header>
+        <div class="grid-container">
+            <div class="grid-item">
+                <div>1</div>
+            </div>
+            <div class="grid-item">
+                <div>2</div>
+            </div>
+            <div class="grid-item">
+                <div>3</div>
+            </div>
+            <div class="grid-item">
+                <div>4</div>
+            </div>
+            <div class="grid-item">
+                <div>5</div>
+            </div>
+            <div class="grid-item">
+                <div>6</div>
+            </div>
+            <div class="grid-item">
+                <div>7</div>
+            </div>
+            <div class="grid-item">
+                <div>8</div>
+            </div>
+        </div>
+    </div>
+    <div class="card-body" id="cardBodyEight">
+        <header>
+            <h3>Welcome to Page 8</h3>
+        </header>
+        <div class="grid-container">
+            <div class="grid-item">
+                <div>1</div>
+            </div>
+            <div class="grid-item">
+                <div>2</div>
+            </div>
+            <div class="grid-item">
+                <div>3</div>
+            </div>
+            <div class="grid-item">
+                <div>4</div>
+            </div>
+            <div class="grid-item">
+                <div>5</div>
+            </div>
+            <div class="grid-item">
+                <div>6</div>
+            </div>
+            <div class="grid-item">
+                <div>7</div>
+            </div>
+            <div class="grid-item">
+                <div>8</div>
+            </div>
+        </div>
+    </div>
+    <div class="card-body" id="cardBodyNine">
+        <header class="header">
+            <h3>Welcome to Page 9</h3>
+        </header>
+        <div class="grid-container">
+            <div class="grid-item">
+                <div>1</div>
+            </div>
+            <div class="grid-item">
+                <div>2</div>
+            </div>
+            <div class="grid-item">
+                <div>3</div>
+            </div>
+            <div class="grid-item">
+                <div>4</div>
+            </div>
+            <div class="grid-item">
+                <div>5</div>
+            </div>
+            <div class="grid-item">
+                <div>6</div>
+            </div>
+            <div class="grid-item">
+                <div>7</div>
+            </div>
+            <div class="grid-item">
+                <div>8</div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
